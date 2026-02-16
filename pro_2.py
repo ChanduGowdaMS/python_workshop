@@ -400,3 +400,24 @@ if limit > 0:
 
 print()
 '''
+'''
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    left = [x for x in arr[1:] if x <= pivot]
+    right = [x for x in arr[1:] if x > pivot]
+    return quick_sort(left) + [pivot] + quick_sort(right)
+arr=[13, 14, 16, 7, 1, 41]
+print(quick_sort(arr))
+'''
+'''
+def bubble_sort(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+arr=[12,3,89,5,1,21]
+print(bubble_sort(arr))
+'''
